@@ -10,8 +10,8 @@ namespace GeneralProject.UIWEB.Controllers
 {
     public class EmployeeController : Controller
     {
-        private IEmployeeService _IEmployeeService;
-        private IEmployeeAddressService _IEmployeeAddressService;
+        private readonly IEmployeeService _IEmployeeService;
+        private readonly IEmployeeAddressService _IEmployeeAddressService;
 
         public EmployeeController(IEmployeeService IEmployeeService, IEmployeeAddressService IEmployeeAddressService)
         {

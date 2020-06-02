@@ -1,6 +1,7 @@
 ﻿using GeneralProject.Entities.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace GeneralProject.Business.Abstract
@@ -10,5 +11,7 @@ namespace GeneralProject.Business.Abstract
         void Add(EmployeeAddress item);
         void Update(EmployeeAddress item);
         List<EmployeeAddress> GetAll();
+
+        EmployeeAddress Get(Expression<Func<EmployeeAddress, bool>> filter);
     }
 }

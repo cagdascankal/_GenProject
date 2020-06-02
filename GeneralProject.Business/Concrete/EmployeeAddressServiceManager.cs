@@ -3,30 +3,38 @@ using GeneralProject.DataAccess.Abstract;
 using GeneralProject.Entities.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace GeneralProject.Business.Concrete
 {
     public class EmployeeAddressServiceManager : IEmployeeAddressService
     {
-        private IEmployeeAddressDal _IEmployeeDal;
+        private IEmployeeAddressDal _IEmployeeAddressDal;
         public EmployeeAddressServiceManager(IEmployeeAddressDal IEmployeeAddressDal)
         {
-            _IEmployeeDal = IEmployeeAddressDal;
+            _IEmployeeAddressDal = IEmployeeAddressDal;
         }
         public void Add(EmployeeAddress item)
         {
-            _IEmployeeDal.Add(item);
+            _IEmployeeAddressDal.Add(item);
+        }
+
+        public EmployeeAddress Get(Expression<Func<EmployeeAddress, bool>> filter)
+        {
+            return _IEmployeeAddressDal.Get(filter);
         }
 
         public List<EmployeeAddress> GetAll()
         {
-           return _IEmployeeDal.GetList();
+            return _IEmployeeAddressDal.GetList();
         }
 
         public void Update(EmployeeAddress item)
         {
-            _IEmployeeDal.Update(item);
+            _IEmployeeAddressDal.Update(item);
         }
+
+
     }
 }

@@ -14,7 +14,7 @@ namespace GeneralProject.DataAccess.Concrete.EntityFramework
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         { 
-            optionsBuilder.UseSqlServer(@"Server=.;Database=cccorett;Trusted_Connection=true");  
+            optionsBuilder.UseSqlServer(@"Server=.;Database=CagdasCoreDb;Trusted_Connection=true");  
             base.OnConfiguring(optionsBuilder);
         }
 
